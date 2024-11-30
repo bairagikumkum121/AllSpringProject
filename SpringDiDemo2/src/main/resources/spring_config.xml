@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	<bean class="com.springdidemo2.entity.ClassRoom" id="clr">
+		<property name="studentName">
+			<list>
+				<value>Kumkum</value>
+				<value>Vaishnavi</value>
+				<value>Mansi</value>
+			</list>
+		</property>
+	</bean>
+	<bean class="com.springdidemo2.entity.DbDetails" id="dbDetails">
+		<property name="dbDetails">
+			<map>
+				<entry key="1" value="Kumkum" />
+				<entry key="2" value="Kittu" />
+			</map>
+		</property>
+	</bean>
+	<bean class="com.springdidemo2.entity.Playlist" id="list">
+		<constructor-arg name="songList">
+			<set>
+				<value>Lean on</value>
+				<value>Despacito</value>
+				<value>Shape of you</value>
+				<value>Cheap thrills</value>
+				<value>Shape of you</value>
+			</set>
+		</constructor-arg>
+	</bean>
+	<!-- <bean class="com.springdidemo2.entity.ABC" id="abc"> <constructor-arg 
+		name="x" value="35"></constructor-arg> </bean> <bean class="com.springdidemo2.entity.PQR" 
+		id="pqr"> <constructor-arg name="y" value="45"></constructor-arg> </bean> 
+		<bean class="com.springdidemo2.entity.Container" id="cntr" autowire="byType" 
+		/> -->
+
+	<bean class="com.springdidemo2.entity.ABC" id="abc">
+		<constructor-arg name="x" value="25" />
+	</bean>
+
+	<bean class="com.springdidemo2.entity.PQR" id="pqr">
+		<property name="y" value="35" />
+	</bean>
+
+	<bean class="com.springdidemo2.entity.Container" id="cntr"
+		autowire="constructor" />
+	<bean class="com.springdidemo2.entity.Candidate" id="interview">
+		<constructor-arg name="interviews">
+			<props>
+				<prop key="17/03/2003">TCS</prop>
+
+				<prop key="19/03/2003">Infoses</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+</beans>
